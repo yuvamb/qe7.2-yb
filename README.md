@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![q-e-logo](logo.jpg)
 
 This is the distribution of the Quantum ESPRESSO suite of codes (ESPRESSO:
@@ -5,6 +6,41 @@ opEn-Source Package for Research in Electronic Structure, Simulation, and
 Optimization)
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+=======
+## Quantum ESPRESSO v7.2 with length gauge dielectric tensor. 
+This is a modified version of the open-source Quantum ESPRESSO v7.2 code. The modification has been made in the PP/src/epsilon.f90 file that will generate epsilon.x executable for dielectric function calculations. 
+
+## New position operator
+The following position operator was inspired by previous peer-reviewed work [1], [2]:
+<img width="1037" height="272" alt="image" src="https://github.com/user-attachments/assets/2aaf7b10-9d74-4f92-a0ae-57887fd42a00" />
+
+
+
+The formula is compatible with all arbitrary unit cell shapes of dimension A:
+
+
+<img width="365" height="101" alt="image" src="https://github.com/user-attachments/assets/d3fa34b9-4411-4f1d-9710-8de3af6162b6" />
+
+
+
+The dependency on fractional coordinates leverages the local coordinate system.
+![fig2_fractional_coordinate](https://github.com/user-attachments/assets/fc912b9e-8592-47ef-a808-1cd47cb4bf7e)
+
+
+Currently, the following formulation has only been implemented over the diagonal elements of the dielectric tensor.
+<img width="821" height="599" alt="image" src="https://github.com/user-attachments/assets/c43def83-810f-4fdb-a5e6-78d757243c38" />
+
+Things to keep in mind before running the simulation:
+1) Valid only for Gamma point calculations
+2) Run epsilon.x with serial.
+
+More generalized cases will be implemented in future updates.  
+
+## Refrences
+[1] R. Resta, "The Quantum–Mechanical Position Operator in Extended Systems," Physical Review Letters, vol. 80, no. 9, p. 1800, 1998. 
+
+[2] E. V. F. d. Aragão, D. Moreno, S. Battaglia, G. L. Bendazzoli, S. Evangelisti, T. Leininger, N. Suaud and J. A. Berger, "A simple position operator for periodic systems," Physical Review B, vol. 99, no. 20, p. 205144, 2019.
+>>>>>>> bdab7801028654669acc058a9c407e5cd95fb819
 
 ## USAGE
 Quick installation instructions for CPU-based machines. For GPU execution, see
@@ -34,6 +70,7 @@ the intended compilers or MPI compiler wrappers as `CMAKE_Fortran_COMPILER` and 
 "make" builds all targets. Link to binaries are found in build/bin.
 If `make install` is invoked, directory `CMAKE_INSTALL_PREFIX`
 is prepended onto all install directories.
+<<<<<<< HEAD
 
 For more information, see the general documentation in directory Doc/, 
 package-specific documentation in \*/Doc/, and the web site 
@@ -87,3 +124,5 @@ for more details.
 You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 675 Mass Ave, Cambridge, MA 02139, USA.
+=======
+>>>>>>> bdab7801028654669acc058a9c407e5cd95fb819
